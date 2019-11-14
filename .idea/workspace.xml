@@ -2,44 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="892765a4-9edf-4c60-8f6c-208d9db36e6b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/static/fonts/icons/fontawesome/FontAwesome.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/static/fonts/icons/fontawesome/fontawesome-webfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/static/fonts/icons/fontawesome/fontawesome-webfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/static/fonts/icons/fontawesome/fontawesome-webfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/static/fonts/icons/fontawesome/fontawesome-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/static/fonts/icons/fontawesome/fontawesome-webfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/static/fonts/icons/themify/themify.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/static/fonts/icons/themify/themify.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/static/fonts/icons/themify/themify.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/static/fonts/icons/themify/themify.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/static/images/404.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/static/images/500.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/static/images/bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/static/images/datatables/sort_asc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/static/images/datatables/sort_asc_disabled.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/static/images/datatables/sort_both.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/static/images/datatables/sort_desc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/static/images/datatables/sort_desc_disabled.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/static/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/static/images/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/DangNhap.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Diem.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/GiaoVien.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/HocKi.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/HocSinh.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Lop.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/PhuHuynh.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/TrangChu.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/UserInfo.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/QuanLyHocSinh_PHP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/QuanLyHocSinh_PHP.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/validation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -250,7 +213,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1573711046217</updated>
-      <workItem from="1573711053787" duration="2963000" />
+      <workItem from="1573711053787" duration="5443000" />
     </task>
     <servers />
   </component>
