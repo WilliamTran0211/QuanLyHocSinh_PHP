@@ -31,9 +31,10 @@ Route::get('/Diem', function (){
     return view('Diem');
 });
 
-Route::get('/Lop', function (){
-    return view('Lop');
-});
+
+//Route Lop
+Route::get('/Lop','LopController@LoadDanhSachLop')->name("Lop");
+Route::get("/Lop/{MaLop}",'LopController@XoaLop')->name("DeleteLop");
 
 Route::get('/HocKi', function (){
     return view('HocKi');
