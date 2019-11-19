@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('DangNhap');
 });
 
 Route::get('/DangNhap', function (){
@@ -23,9 +23,9 @@ Route::get('/TrangChu', function (){
     return view('TrangChu');
 });
 
-Route::get('/HocSinh', function (){
-    return view('HocSinh');
-});
+// Route::get('/HocSinh', function (){
+//     return view('HocSinh');
+// });
 
 Route::get('/Diem', function (){
     return view('Diem');
@@ -54,3 +54,8 @@ Route::get('/MonHoc', function (){
 Route::get('/info', function (){
     return view('UserInfo');
 });
+
+
+Route::get('HocSinh' ,'HocsinhController@HocSinh');
+Route::get('HocSinh/edit/{MaHS}', 'HocsinhController@edit');
+

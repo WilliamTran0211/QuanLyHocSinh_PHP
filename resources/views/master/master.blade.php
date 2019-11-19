@@ -45,7 +45,7 @@
 
 </head>
 
-<body class="animsition">
+<body class="">
 <div class="page-wrapper">
     <!-- MENU SIDEBAR-->
     <aside class="menu-sidebar d-none d-lg-block">
@@ -135,7 +135,7 @@
                                         </div>
                                         <div class="account-dropdown__body">
                                             <div class="account-dropdown__item">
-                                                <a href="Info">
+                                                <a href="Diem">
                                                     <i class="zmdi zmdi-account"></i>Thông tin tài khoản</a>
                                             </div>
                                         </div>
@@ -155,7 +155,7 @@
 
         <!-- MAIN CONTENT-->
         <div class="main-content">
-            <div class="section__content section__content--p30">
+            <div class="p-30">
                 @yield('content')
             </div>
         </div>
