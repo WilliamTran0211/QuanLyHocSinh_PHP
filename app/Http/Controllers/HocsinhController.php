@@ -6,31 +6,36 @@ use Hocsinh;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Session;
+
 class HocsinhController extends Controller
 {
     public function HocSinh()
     {
         // $user='nguyễn Quang Linh';
         // return view('HocSinh',compact('user'));
-        
-        $hocsinh=DB::table('hocsinh')->get();
-         return view('HocSinh',compact('hocsinh'));
-     
-    }
-    public function edit($MaHS)
-    {
-        $hocsinh = HocSinh::findOrFail($MaHS);
-        $pageName = 'News - Update';
-        return view('news_update', compact('hocsinh', 'pageName'));
-    }
-    public function update(Request $request, $MaHS)
-    {
-        $news = hocsinh::find($MaHS);
-        $news->title = $request->title;
-        $news->email = $request->email;
-        $news->description = $request->description;
 
-        $news->save();
-        return redirect()->action('Admin\AdminNewsController@index');
+        $hocsinh = DB::select('select * from hocsinh');
+        return view('HocSinh',['hocsinh'=>$hocsinh] );
     }
+    public function showhs($MaHS) {
+        $hocsinh = DB::select('select * from hocsinh where MaHS = ?',[$MaHS]);
+        return view('UpdateHocSinh',['hocsinh'=>$hocsinh]);
+     }
+     public function ediths(Request $request, $MaHS) {
+         
+        $hocsinh = DB::select('select * from hocsinh');
+        $name = $request->input('stud_name');
+        $namsinh = $request->input('namsinh');
+        $gioitinh = $request->input('gioitinh');
+        $diachi = $request->input('diachi');
+        $malop = $request->input('malop');
+        DB::update('update hocsinh set HoTen = ? , NamSinh = ? , GioiTinh = ?, 	DiaChi = ? , MaLop = ?   where MaHS = ?',[$name,$namsinh,$gioitinh,$diachi,$malop,$MaHS]);
+        echo '<script>alert("Update thành công nha!!!");</script>';
+        echo '<h1 align="center"> Update thành công</h1>';
+        echo '<a href = "/HocSinh">Trở lại trang Học Sinh</a> ';
+       
+       
+     }
+
+ 
 }

@@ -11,6 +11,7 @@
 </head>
 <body>
     <div class="">
+    <a class="btn btn-primary btn-small" href=">">Thêm</a>
     <table class="table table-bordered">
          <tr class="success">
          <thead class="thead-dark">
@@ -24,34 +25,19 @@
              <th>Xóa</th>
              </tr>
              </thead>
-            <tr>
-            <td><?php
-                 foreach ($hocsinh as $p) {
-                    $Mahs=$p->MaHS ;
-                    $hoten=$p->HoTen;
-                    $namsinh=$p->NamSinh;
-                    $gioitinh=$p->GioiTinh;
-                    $diachi=$p->DiaChi;
-                    $malop= number_format($p->MaLop) ;
-                ?>
-                            <tr>
-                                <td><?php echo($Mahs);?></td>
-                                <td><?php echo($hoten);?></td>
-                                <td><?php echo($namsinh);?></td>
-                                <td><?php echo($gioitinh);?></td>
-                                <td><?php echo($diachi);?></td>
-                                <td><?php echo($malop);?></td>
-                              <td>                      
-                              <a class="btn btn-primary btn-small" href="/news_update/{{$p->MaHS}}">Sửa</a>
-                                </td>
-                                <td> 
-                                  <a class="btn btn-primary btn-small" href="Lop.blade.php?MaHS=<?php echo $Mahs; ?>">Xóa</a>
-                                </td>
-                              </tr>
-                <?php
-                }?>
-             </td>
-              </tr>
+             @foreach ($hocsinh as $hocsinh)
+         <tr>
+         <td>{{ $hocsinh->MaHS }}</td>
+            <td>{{ $hocsinh->HoTen }}</td>
+            <td>{{ $hocsinh->NamSinh }}</td>
+            <td>{{ $hocsinh->GioiTinh }}</td>
+            <td>{{ $hocsinh->DiaChi }}</td>
+            <td>{{ $hocsinh->MaLop }}</td>
+            <td><a class="btn btn-primary btn-small" href = 'ediths/{{ $hocsinh->MaHS }}'>Edit</a></td>
+            <td><a class="btn btn-primary btn-small" href = 'delete/{{ $hocsinh->MaHS }}'>Xóa</a></td>
+         </tr>
+         @endforeach
+      
      </table>
 </body>
 </html>

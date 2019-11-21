@@ -57,5 +57,19 @@ Route::get('/info', function (){
 
 
 Route::get('HocSinh' ,'HocsinhController@HocSinh');
-Route::get('HocSinh/edit/{MaHS}', 'HocsinhController@edit');
+Route::get('ediths/{MaHS}','HocsinhController@showhs');
+Route::post('ediths/{MaHS}','HocsinhController@ediths');
 
+
+
+Route::get('PhuHuynh' ,'PhuhuynhController@LoadDanhSachphuhuynh')->name("Phuhuynh");
+
+// Route::get('edit/{MaHS}', 'HocsinhController@edit');
+
+//Route lop
+Route::get('/Lop','LopController@LoadDanhSachLop')->name("Lop");
+Route::get("/Lop/{MaLop}",'LopController@XoaLop')->name("DeleteLop");
+
+Route::get('MonHoc' ,'MonHoccontroller@LoadDanhSachmonhoc')->name("MonHoc");
+Route::get('edit/{MaMH}','MonHoccontroller@show');
+Route::post('edit/{MaMH}','MonHoccontroller@edit');
