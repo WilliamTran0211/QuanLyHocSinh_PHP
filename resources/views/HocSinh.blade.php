@@ -10,10 +10,21 @@
   
 </head>
 <body>
-    <div class="">
-    <a class="btn btn-primary btn-small" href=">">Thêm</a>
-    <table class="table table-bordered">
-         <tr class="success">
+
+    <div class=" ">
+        <div class="text-center">
+            @if (session('status'))
+                <div class="alert alert-success">
+                {{ session('status') }}
+                </div>  
+             @endif
+        </div>
+        <div class="p-2">
+        <a class="btn btn-primary btn-small " href=">">Thêm</a>
+        </div>
+        <div class="table-responsive">
+    <table class="table table-bordered text-center ">
+         <tr class="success">   
          <thead class="thead-dark">
              <th>MaHS</th>
              <th>Họ và Tên</th>
@@ -26,7 +37,7 @@
              </tr>
              </thead>
              @foreach ($hocsinh as $hocsinh)
-         <tr>
+         <tr class="table-light">
          <td>{{ $hocsinh->MaHS }}</td>
             <td>{{ $hocsinh->HoTen }}</td>
             <td>{{ $hocsinh->NamSinh }}</td>
@@ -34,11 +45,38 @@
             <td>{{ $hocsinh->DiaChi }}</td>
             <td>{{ $hocsinh->MaLop }}</td>
             <td><a class="btn btn-primary btn-small" href = 'ediths/{{ $hocsinh->MaHS }}'>Edit</a></td>
-            <td><a class="btn btn-primary btn-small" href = 'delete/{{ $hocsinh->MaHS }}'>Xóa</a></td>
-         </tr>
+            <td>
+                <input type="submit" class="btn btn-primary btn-small" value="Xóa"  data-id="{{ $hocsinh->MaHS }}" data-token="{{ csrf_token() }}"/>
+            </td>
+ 
          @endforeach
-      
+
      </table>
+     </div>
+    </div>
+    <script >
+            $(".deleteProduct").click(function(){
+                var id = $(this).data("MaHS");
+                var token = $(this).data("token");
+                $.ajax(
+                {
+                    url: "delete/"+id,
+                    type: 'PUT',
+                    dataType: "JSON",
+                    data: {
+                        "MaHS": id,
+                        "_method": 'DELETE',
+                        "_token": token,
+                    },
+                    success: function ()
+                    {
+                        console.log("it Work");
+                    }
+                });
+
+                console.log("It failed");
+            });
+    </script>
 </body>
 </html>
 @endsection
