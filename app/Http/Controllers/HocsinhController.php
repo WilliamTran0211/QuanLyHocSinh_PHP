@@ -34,7 +34,7 @@ class HocsinhController extends Controller
         echo '<h1 align="center"> Update thành công</h1>';
         echo '<a href = "/HocSinh">Trở lại trang Học Sinh</a> ';
        
-       
+        
      }
 
  

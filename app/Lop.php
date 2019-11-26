@@ -7,4 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Lop extends Model
 {
     //
+    protected $table = 'lop';
+    public $timestamp = false;
 }

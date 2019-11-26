@@ -34,7 +34,12 @@ Route::get('/Diem', function (){
 
 //Route Lop
 Route::get('/Lop','LopController@LoadDanhSachLop')->name("Lop");
+Route::get("/Lop/ThemLop", 'LopController@ThemLop')->name("ThemLop");
 Route::get("/Lop/{MaLop}",'LopController@XoaLop')->name("DeleteLop");
+Route::get("/Lop/SuaLop/{MaLop}",'LopController@SuaLop')->name("SuaLop");
+// Route::post("/Lop",'LopController@ThemLop')->name("ThemLop");
+
+
 
 Route::get('/HocKi', function (){
     return view('HocKi');
@@ -66,10 +71,6 @@ Route::post('ediths/{MaHS}','HocsinhController@ediths');
 Route::get('PhuHuynh' ,'PhuhuynhController@LoadDanhSachphuhuynh')->name("Phuhuynh");
 
 // Route::get('edit/{MaHS}', 'HocsinhController@edit');
-
-//Route lop
-Route::get('/Lop','LopController@LoadDanhSachLop')->name("Lop");
-Route::get("/Lop/{MaLop}",'LopController@XoaLop')->name("DeleteLop");
 
 Route::get('MonHoc' ,'MonHoccontroller@LoadDanhSachmonhoc')->name("MonHoc");
 Route::get('edit/{MaMH}','MonHoccontroller@show');
