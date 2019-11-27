@@ -35,9 +35,10 @@ Route::get('/Diem', function (){
 //Route Lop
 Route::get('/Lop','LopController@LoadDanhSachLop')->name("Lop");
 Route::get("/Lop/ThemLop", 'LopController@ThemLop')->name("ThemLop");
-Route::get("/Lop/{MaLop}",'LopController@XoaLop')->name("DeleteLop");
+Route::post("/LuuLop",'LopController@LuuLop')->name("LuuLop");
+Route::post("/LuuSuaLop",'LopController@LuuSuaLop')->name("LuuSuaLop");
 Route::get("/Lop/SuaLop/{MaLop}",'LopController@SuaLop')->name("SuaLop");
-// Route::post("/Lop",'LopController@ThemLop')->name("ThemLop");
+Route::get("/Lop/{MaLop}",'LopController@XoaLop')->name("DeleteLop");
 
 
 

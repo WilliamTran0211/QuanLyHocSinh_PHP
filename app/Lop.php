@@ -8,5 +8,7 @@ class Lop extends Model
 {
     //
     protected $table = 'lop';
-    public $timestamp = false;
+    protected $primaryKey = 'MaLop';
+    public $timestamps = false;
+
 }
