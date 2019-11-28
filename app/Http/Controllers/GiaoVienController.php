@@ -7,5 +7,8 @@ use App\GiaoVien;
 
 class GiaoVienController extends Controller
 {
-    //
+    public function GiaoVien(){
+        $GiaoVien = GiaoVien::paginate(4);
+        return view("GiaoVien",["GiaoVien" => $GiaoVien]);
+    }
 }

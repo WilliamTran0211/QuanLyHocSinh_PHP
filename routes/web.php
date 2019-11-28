@@ -29,7 +29,7 @@ Route::get('/TrangChu', function (){
 
 Route::get('/Diem', function (){
     return view('Diem');
-});
+})->name('Diem');
 
 //Route Lop
 Route::get('/Lop','LopController@LoadDanhSachLop')->name("Lop");
@@ -59,21 +59,12 @@ Route::get("/HocKy/SuaHocKy/{MaHK}",'HocKyController@SuaHocKy')->name("SuaHocKy"
 Route::get("/HocKy/{MaHK}",'HocKyController@XoaHocKy')->name("DeleteHocKy");
 
 
-Route::get('/HocKi', function (){
-    return view('HocKi');
-});
-
-Route::get('/GiaoVien', function (){
-    return view('GiaoVien');
-});
+Route::get('/GiaoVien','GiaoVienController@GiaoVien')->name('GiaoVien');
 
 Route::get('/PhuHuynh', function (){
     return view('PhuHuynh');
-});
+})->name('PhuHuynh');
 
-Route::get('/MonHoc', function (){
-    return view('MonHoc');
-});
 
 Route::get('/info', function (){
     return view('UserInfo');
