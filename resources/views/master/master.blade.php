@@ -60,8 +60,8 @@
                             <i class="fas fa-school"></i>Lớp</a>
                     </li>
                     <li id="hocki_mnu">
-                        <a href="HocKi">
-                            <i class="fas fa-calendar"></i>Học Kì</a>
+                        <a href="HocKy">
+                            <i class="fas fa-calendar"></i>Học Kỳ</a>
                     </li>
                     <li id="giaovien_mnu">
                         <a href="GiaoVien">

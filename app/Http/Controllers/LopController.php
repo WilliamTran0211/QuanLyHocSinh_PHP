@@ -8,7 +8,7 @@ class LopController extends Controller
 {
     //
     public function LoadDanhSachLop(){
-        $Lop = Lop::all()->toArray();
+        $Lop = Lop::paginate(4);
         // $Lop = DB::table('lop')->get();
         return view('Lop')->with('Lop',$Lop);
     }
