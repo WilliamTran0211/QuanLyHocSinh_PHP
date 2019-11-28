@@ -11,24 +11,26 @@
                             <tr >
                                 <th>Mã lớp</th>
                                 <th>Tên lớp</th>
+                                <th>Giáo viên chủ nhiệm</th>
                                 <th>Hành động</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php
-                            foreach ($Lop as $lop) {
+                            <?php foreach ($Lop as $lop){ 
+                                    $GiaoVien = \App\GiaoVien::find($lop['MaGV']);
                                 ?>
                                 <tr class="table-light">
                                     <td>{{$lop["MaLop"]}}</td>
                                     <td>{{$lop["TenLop"]}}</td>
                                     <td>
+                                        {{$GiaoVien["TenGV"]}}
+                                    </td>
+                                    <td>
                                         <a class="btn btn-primary update" href="{{route('SuaLop',$lop['MaLop'])}}">Sửa</a>
                                         <a class="btn btn-primary delete" href="/Lop/<?php echo ($lop["MaLop"]) ?>">Xóa</a>
                                     </td>
                                 </tr>
-                            <?php
-                            }
-                            ?>
+                            <?php } ?>
                         </tbody>
                     </table>
                     {{ $Lop->links() }}
