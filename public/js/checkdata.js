@@ -17,7 +17,7 @@ function KiemTraGiaoVien() {
     let email = document.forms["giaovien"]["email"].value;
     let sdt = document.forms["giaovien"]["sdt"].value;
     let mamh = document.forms["giaovien"]["mamh"].value;
-
+    
     if (tenGiaoVien.trim() == "") {
         document.getElementById("error-name").innerHTML = "Vui lòng nhập tên";
         document.forms["giaovien"]["tengiaovien"].focus();

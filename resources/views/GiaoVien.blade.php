@@ -8,11 +8,11 @@
                 <div class="table-responsive text-nowrap">
                     <table class="table table-bordered text-center ">
                         <thead class="thead-dark">
-                            <tr >
-                                <th class="th-lg">Mã giáo viên</th>
-                                <th class="th-lg">Tên giáo viên</th>
-                                <th class="th-lg">Năm sinh</th>
-                                <th class="th-lg">Giới tính</th>
+                            <tr>
+                                <th>Mã giáo viên</th>
+                                <th>Tên giáo viên</th>
+                                <th>Ngày sinh</th>
+                                <th>Giới tính</th>
                                 <th>Địa Chỉ</th>
                                 <th>Email</th>
                                 <th>Số điện thoại</th>
@@ -21,14 +21,22 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($GiaoVien as $giaovien){ 
-                                    $MonHoc = \App\MonHoc::find($giaovien['MaMH']);
+                            <?php foreach ($GiaoVien as $giaovien) {
+                                $MonHoc = \App\MonHoc::find($giaovien['MaMH']);
                                 ?>
                                 <tr class="table-light">
                                     <td>{{$giaovien["MaGV"]}}</td>
                                     <td>{{$giaovien["TenGV"]}}</td>
-                                    <td>{{$giaovien["NamSinh"]}}</td>
-                                    <td>{{$giaovien["GioiTinh"]}}</td>
+                                    <td>{{$giaovien["NgaySinh"]}}</td>
+                                    <?php
+                                        if ($giaovien["GioiTinh"] == 0) {
+                                            ?>
+                                        <td>Nam</td>
+                                    <?php } else { ?>
+                                        <td>Nữ</td>
+                                    <?php
+                                        }
+                                        ?>
                                     <td>{{$giaovien["DiaChi"]}}</td>
                                     <td>{{$giaovien["Email"]}}</td>
                                     <td>{{$giaovien["SDT"]}}</td>
@@ -36,6 +44,8 @@
                                         {{$MonHoc["TenMH"]}}
                                     </td>
                                     <td>
+                                        <a class="btn btn-primary update" href="{{route('SuaGiaoVien',$giaovien['MaGV'])}}">Sửa</a>
+                                        <a class="btn btn-primary delete" href="/GiaoVien/<?php echo ($giaovien["MaGV"]) ?>">Xóa</a>
                                     </td>
                                 </tr>
                             <?php } ?>
@@ -48,4 +58,3 @@
     </div>
 </div>
 @endsection
-
