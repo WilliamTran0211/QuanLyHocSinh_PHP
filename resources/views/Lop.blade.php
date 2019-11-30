@@ -39,15 +39,4 @@
         </div>
     </div>
 </div>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('#edit').on("click", function() {
-            let MaLop = $(this).data('id');
-            alert(MaLop);
-            $("#partial-view-edit").load("/Lop/SuaLop", {
-                MaLop: MaLop
-            });
-        })
-    })
-</script>
 @endsection

@@ -60,6 +60,8 @@ Route::get("/HocKy/{MaHK}",'HocKyController@XoaHocKy')->name("DeleteHocKy");
 
 
 Route::get('/GiaoVien','GiaoVienController@GiaoVien')->name('GiaoVien');
+Route::get('/GiaoVien/ThemGiaoVien','GiaoVienController@ThemGiaoVien')->name('ThemGiaoVien');
+Route::post('/LuuGiaoVien','GiaoVienController@LuuGiaoVien')->name('LuuGiaoVien');
 
 Route::get('/PhuHuynh', function (){
     return view('PhuHuynh');

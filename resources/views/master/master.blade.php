@@ -165,7 +165,7 @@
 
 <!-- Main JS-->
 <script src="{{ URL::asset('js/main.js')}}"></script>
-
+<script src="{{ URL::asset('js/checkdata.js')}}"></script>
 @yield('javascript')
 
 </body>

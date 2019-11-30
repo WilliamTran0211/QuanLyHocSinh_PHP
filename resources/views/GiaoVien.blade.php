@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-lg-12">
             <main class="mt-2">
-                <a type="button" class="btn btn-primary mt-3 mb-3 add-class" href="{{ route('ThemLop')}}">Thêm</a>
+                <a type="button" class="btn btn-primary mt-3 mb-3 add-class" href="{{ route('ThemGiaoVien')}}">Thêm</a>
                 <div class="table-responsive text-nowrap">
                     <table class="table table-bordered text-center ">
                         <thead class="thead-dark">

@@ -7,13 +7,16 @@
       <div class="d-flex justify-content-center">
         <form name="lop" action="{{route('LuuLop')}}" method="post" onsubmit="return KiemTraLop();">
           {{csrf_field()}}
-          <div class="input-group mb-3">
-            <input name="tenlop" class="form-control" type="text"  placeholder="Tên lớp" />
+          <div class="mb-2">
+            <div class="input-group">
+              <input name="tenlop" class="form-control" type="text" placeholder="Tên lớp" />
+            </div>
+            <p id="error-class" class="text-danger error"></p>
           </div>
-          <div class="input-group mb-3">
-            <select name="magv" class="form-control">
+          <div class="input-group mb-2">
+            <select multiple name="magv" class="form-control">
               <option value="" disabled selected>-- Giáo viên chủ nhiệm --</option>
-              <option value="">Null</option>
+              <!-- <option value="">Null</option> -->
               <?php foreach ($GiaoVien as $giaovien) { ?>
                 <option value="{{$giaovien['MaGV']}}" label="{{$giaovien['TenGV']}}"></option>
               <?php } ?>
@@ -27,15 +30,4 @@
     </div>
   </div>
 </div>
-<script type="text/javascript">
-  function KiemTraLop() {
-    let tenLop = document.forms["lop"]["tenlop"].value;
-    if (tenLop == "") {
-      alert("Tên lớp không được rỗng");
-      document.forms["lop"]["tenlop"].focus();
-      return false;
-    }
-    return true;
-  }
-</script>
 @endsection

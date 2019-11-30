@@ -1,6 +1,6 @@
     <!-- Fontfaces CSS-->
     <link href="{{ URL::asset('css/font-face.css')}}" rel="stylesheet" media="all">
-
+    <link href="{{ URL::asset('css/style.css')}}" rel="stylesheet" media="all">
     <link href="{{ URL::asset('my_vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet" media="all">
     <link href="{{ URL::asset('my_vendor/font-awesome-5/css/fontawesome-all.min.css')}}" rel="stylesheet" media="all">
     <link href="{{ URL::asset('my_vendor/fontawesome-5.11.2/css/all.css')}}" rel="stylesheet" media="all">
