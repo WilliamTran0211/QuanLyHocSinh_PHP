@@ -1,5 +1,6 @@
 @extends('master.master')
 @section('content')
+<<<<<<< HEAD
     <h1 align='center'> Quản lý Môn Học</h1>
 
 <html lang="en">
@@ -53,4 +54,5 @@
 
 </body>
 </html>
+
 @endsection

@@ -1,5 +1,6 @@
 @extends('master.master')
 @section('content')
+<<<<<<< HEAD
     <h1 align='center'> Quản lý Học Sinh</h1>
 
 <html lang="en">
@@ -56,6 +57,8 @@
               </tr>
      </table>
     <a class="btn btn-primary btn-small" href="{{route('ThemHocSinh')}}">Thêm Học Sinh</a>
+
 </body>
+
 </html>
 @endsection

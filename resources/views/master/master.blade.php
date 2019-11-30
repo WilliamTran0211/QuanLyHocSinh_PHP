@@ -6,7 +6,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
     <!-- Title Page-->
     <title>@yield('title')</title>
 
@@ -44,7 +43,7 @@
                             <i class="fas fa-user-graduate"></i>Học Sinh</a>
                         <ul class="list-unstyled navbar__sub-list js-sub-list">
                             <li>
-                                <a href="/HocSinh">Thông Tin Học Sinh</a>
+                                <a href="{{route('HocSinh')}}">Thông Tin Học Sinh</a>
                             </li>
                             <li>
                                 <a href="/PhuHuynh">Phụ Huynh</a>
@@ -52,19 +51,19 @@
                         </ul>
                     </li>
                     <li id="diem_mnu">
-                        <a href="{{URL::to("Diem")}}">
+                        <a href="{{route('Diem')}}">
                             <i class="fas fa-calculator"></i>Điểm</a>
                     </li>
                     <li id="lop_mnu">
-                        <a href="Lop">
+                        <a href="{{route('Lop')}}">
                             <i class="fas fa-school"></i>Lớp</a>
                     </li>
                     <li id="hocki_mnu">
-                        <a href="HocKi">
-                            <i class="fas fa-calendar"></i>Học Kì</a>
+                        <a href="{{route('HocKy')}}">
+                            <i class="fas fa-calendar"></i>Học Kỳ</a>
                     </li>
                     <li id="giaovien_mnu">
-                        <a href="GiaoVien">
+                        <a href="{{route('GiaoVien')}}">
                             <i class="fas fa-chalkboard-teacher"></i>Giáo viên</a>
                     </li> <li id="monhoc_mnu">
                         <a href="MonHoc">
@@ -169,7 +168,7 @@
 
 <!-- Main JS-->
 <script src="{{ URL::asset('js/main.js')}}"></script>
-
+<script src="{{ URL::asset('js/checkdata.js')}}"></script>
 @yield('javascript')
 
 </body>

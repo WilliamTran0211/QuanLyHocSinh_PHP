@@ -1,34 +1,42 @@
 @extends('master.master')
 @section('content')
-<h1 align='center'> Quản lý Lớp Học</h1>
-<main class="mt-2">
-    <button type="button" class="btn btn-primary mt-3 mb-3">Thêm</button>
-    <table class="table">
-        <thead class="thead-dark">
-            <tr>
-                <th>Mã lớp</th>
-                <th>Mã giảng viên</th>
-                <th>Tên lớp</th>
-                <th>Hành động</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            foreach ($Lop as $lop) {
-                ?>
-                <tr>
-                    <td><?php echo ($lop->MaLop) ?></td>
-                    <td><?php echo ($lop->MaGV) ?></td>
-                    <td><?php echo ($lop->TenLop) ?></td>
-                    <td>
-                        <a class="btn btn-primary edit" href="">Sửa</a>
-                        <a class="btn btn-primary delete" href="{{ route('DeleteLop',['MaLop' => 1])}}">Xóa</a>
-                    </td>
-                </tr>
-            <?php
-            }
-            ?>
-        </tbody>
-    </table>
-</main>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <main class="mt-2">
+                <a type="button" class="btn btn-primary mt-3 mb-3 add-class" href="{{ route('ThemLop')}}">Thêm</a>
+                <div class="content-class">
+                    <table class="table table-bordered text-center ">
+                        <thead class="thead-dark">
+                            <tr >
+                                <th>Mã lớp</th>
+                                <th>Tên lớp</th>
+                                <th>Giáo viên chủ nhiệm</th>
+                                <th>Hành động</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($Lop as $lop){ 
+                                    $GiaoVien = \App\GiaoVien::find($lop['MaGV']);
+                                ?>
+                                <tr class="table-light">
+                                    <td>{{$lop["MaLop"]}}</td>
+                                    <td>{{$lop["TenLop"]}}</td>
+                                    <td>
+                                        {{$GiaoVien["TenGV"]}}
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-primary update" href="{{route('SuaLop',$lop['MaLop'])}}">Sửa</a>
+                                        <a class="btn btn-primary delete" href="/Lop/<?php echo ($lop["MaLop"]) ?>">Xóa</a>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
+                    {{ $Lop->links() }}
+                </div>
+            </main>
+        </div>
+    </div>
+</div>
 @endsection
