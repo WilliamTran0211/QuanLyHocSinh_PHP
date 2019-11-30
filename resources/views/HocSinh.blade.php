@@ -18,12 +18,13 @@
              <th>Họ và Tên</th>
              <th>Ngày Sinh</th>
              <th>Giới Tính</th>
-             <th>dia chi</th>
+             <th>Địa Chỉ</th>
              <th>Mã Lớp</th>
              <th>Sửa</th>
              <th>Xóa</th>
              </tr>
              </thead>
+
             <tr>
             <td><?php
                  foreach ($hocsinh as $p) {
@@ -48,11 +49,13 @@
                                   <a class="btn btn-primary btn-small" href="Lop.blade.php?MaHS=<?php echo $Mahs; ?>">Xóa</a>
                                 </td>
                               </tr>
+                              
                 <?php
                 }?>
              </td>
               </tr>
      </table>
+    <a class="btn btn-primary btn-small" href="{{route('ThemHocSinh')}}">Thêm Học Sinh</a>
 </body>
 </html>
 @endsection

@@ -66,6 +66,9 @@
                     <li id="giaovien_mnu">
                         <a href="GiaoVien">
                             <i class="fas fa-chalkboard-teacher"></i>Giáo viên</a>
+                    </li> <li id="monhoc_mnu">
+                        <a href="MonHoc">
+                            <i class="fas fa-chalkboard-teacher"></i>Môn Học</a>
                     </li>
                 </ul>
             </nav>

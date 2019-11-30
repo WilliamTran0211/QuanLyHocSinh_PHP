@@ -48,9 +48,7 @@ Route::get('/PhuHuynh', function (){
     return view('PhuHuynh');
 });
 
-Route::get('/MonHoc', function (){
-    return view('MonHoc');
-});
+
 
 Route::get('/info', function (){
     return view('UserInfo');
@@ -60,3 +58,15 @@ Route::get('/info', function (){
 Route::get('HocSinh' ,'HocsinhController@HocSinh');
 Route::get('HocSinh/edit/{MaHS}', 'HocsinhController@edit');
 
+Route::get('ThemHocSinh' ,'HocsinhController@getThemHocSinh')->name('ThemHocSinh');
+Route::post('ThemHocSinh' ,'HocsinhController@postThemHocSinh')->name('ThemHocSinh');
+
+Route::get('ThemMonHoc' ,'MonHocController@getThemMonHoc')->name('ThemMonHoc');
+Route::post('ThemMonHoc' ,'MonHocController@postThemMonHoc')->name('ThemMonHoc');
+
+Route::get('MonHoc', 'MonHocController@getMonHoc')->name('MonHoc');
+Route::get('XoaMonHoc/{id}', 'MonHocController@getXoaMonHoc')->name('XoaMonHoc');
+
+
+Route::get('SuaMonHoc/{id}' ,'MonHocController@getSuaMonHoc')->name('SuaMonHoc');
+Route::post('SuaMonHoc/{id}' ,'MonHocController@postSuaMonHoc')->name('SuaMonHoc1');

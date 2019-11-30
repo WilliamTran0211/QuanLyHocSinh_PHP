@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Hocsinh;
+use App\HocSinh;
+use App\Lop;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Session;
@@ -33,4 +34,41 @@ class HocsinhController extends Controller
         $news->save();
         return redirect()->action('Admin\AdminNewsController@index');
     }
+    public function getThemHocSinh(){
+        $ths = Lop::all();
+
+        return view('ThemHocSinh', compact('ths'));
+    }
+
+   public function postThemHocSinh(Request $req){
+
+    $ths = new HocSinh();
+    
+    $ths->HoTen = $req->HoTen;
+    $ths->NamSinh = $req->NgaySinh;
+    $ths->GioiTinh = $req->GioiTinh;
+    $ths->DiaChi = $req->DiaChi;
+    $ths->MaLop = $req->MaLop;
+//    if ( $req->HoTen=="" || $req->NgaySinh=="" || $req->DiaChi=="" ){
+    
+//     session()->flash('KhongThanhCong', 'Vui lòng điền đầy đủ thông tin!');
+//     return false;
+//    }
+//    else{
+//     $ths->save();
+//     session()->flash('KhongThanhCong', 'Đã Thêm Học Sinh Thành Công');
+//     return redirect()->route('ThemHocSinh');
+
+//    }
+
+   $ths->save();
+    return redirect()->route('ThemHocSinh');
+
+   }
+
+
+
+
+
+
 }
