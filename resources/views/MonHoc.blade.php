@@ -23,9 +23,8 @@
         </tr>
         </thead>
         <tbody>
-
           @foreach ($monhoc as $p)
-          <tr>
+          <tr class="table-light">
             <td>{{$p->MaMH}}</td>
             <td>{{$p->TenMH}}</td>
             <td>
@@ -39,8 +38,7 @@
     </div>
     @if(Session::has('xoa'))
     <script>
-      alert('{{Session::get('
-        xoa ')}}');
+      alert("{{Session::get('xoa')}}");
     </script>
     @endif
 </body>

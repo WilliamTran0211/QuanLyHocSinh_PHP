@@ -35,14 +35,25 @@ class GiaoVienController extends Controller
         return redirect()->route("GiaoVien");
     }
 
-    public function SuaGiaoVien($MaGV){
+    public function SuaGiaoVien($MaGV)
+    {
         $GiaoVien = GiaoVien::find($MaGV);
         $MonHoc = MonHoc::all()->toArray();
         return view('SuaGiaoVien', ["GiaoVien" => $GiaoVien, "MonHoc" => $MonHoc]);
     }
 
-    public function LuuSuaGiaoVien(Request $request){
-
+    public function LuuSuaGiaoVien(Request $request)
+    {
+        $GiaoVien = GiaoVien::find($request->magv);
+        $GiaoVien->TenGV = $request->tengiaovien;
+        $GiaoVien->NgaySinh = $request->ngaysinh;
+        $GiaoVien->GioiTinh = $request->gioitinh;
+        $GiaoVien->DiaChi = $request->diachi;
+        $GiaoVien->Email = $request->email;
+        $GiaoVien->SDT = $request->sdt;
+        $GiaoVien->MaMH = $request->mamh;
+        $GiaoVien->save();
+        return redirect()->route("GiaoVien");
     }
 
     public function XoaGiaoVien($MaGV)

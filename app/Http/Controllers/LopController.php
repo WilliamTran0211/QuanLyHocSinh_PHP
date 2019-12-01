@@ -49,6 +49,5 @@ class LopController extends Controller
             DB::delete('delete from lop where MaLop = ?', [$MaLop]);
             return redirect()->route('Lop');
         }
-        
     }
 }

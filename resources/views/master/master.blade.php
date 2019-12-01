@@ -35,7 +35,7 @@
             <nav class="navbar-sidebar">
                 <ul class="list-unstyled navbar__list">
                     <li id="trangchu_mnu">
-                        <a href="#">
+                        <a href="{{route('TrangChu')}}">
                             <i class="fas fa-home"></i>Trang Chủ</a>
                     </li>
                     <li id="hocsinh_mnu" class="has-sub">

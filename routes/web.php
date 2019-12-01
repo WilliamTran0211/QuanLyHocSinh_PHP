@@ -21,11 +21,7 @@ Route::get('/DangNhap', function (){
 
 Route::get('/TrangChu', function (){
     return view('TrangChu');
-});
-
-// Route::get('/HocSinh', function (){
-//     return view('HocSinh');
-// });
+})->name('TrangChu');
 
 Route::get('/Diem', function (){
     return view('Diem');
@@ -46,8 +42,7 @@ Route::post("/LuuHocSinh",'HocsinhController@LuuHocSinh')->name("LuuHocSinh");
 Route::post("/LuuSuaHocSinh",'HocsinhController@LuuSuaHocSinh')->name("LuuSuaHocSinh");
 Route::get("/HocSinh/SuaHocSinh/{MaHS}",'HocsinhController@SuaHocSinh')->name("SuaHocSinh");
 Route::get("/HocSinh/{MaHS}",'HocsinhController@XoaHocSinh')->name("DeleteHocSinh");
-// Route::get('ediths/{MaHS}','HocsinhController@showhs');
-// Route::post('ediths/{MaHS}','HocsinhController@ediths');
+
 
 
 //Route HocKy
