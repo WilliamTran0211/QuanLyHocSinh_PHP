@@ -65,9 +65,14 @@
                     <li id="giaovien_mnu">
                         <a href="{{route('GiaoVien')}}">
                             <i class="fas fa-chalkboard-teacher"></i>Giáo viên</a>
-                    </li> <li id="monhoc_mnu">
-                        <a href="MonHoc">
+                    </li> 
+                    <li id="monhoc_mnu">
+                        <a href="{{route('MonHoc')}}">
                             <i class="fas fa-chalkboard-teacher"></i>Môn Học</a>
+                    </li>
+                    <li id="user_mnu">
+                        <a href="{{route('Users')}}">
+                            <i class="fas fa-user"></i>Users</a>
                     </li>
                 </ul>
             </nav>

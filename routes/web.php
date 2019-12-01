@@ -67,10 +67,7 @@ Route::get('/PhuHuynh', function (){
 
 
 
-Route::get('/info', function (){
-    return view('UserInfo');
-});
-
+Route::get("/Users", 'UserController@loadUsers')->name("Users");
 
 
 
