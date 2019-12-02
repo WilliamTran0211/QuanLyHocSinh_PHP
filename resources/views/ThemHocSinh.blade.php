@@ -1,6 +1,5 @@
 @extends('master.master')
 @section('content')
-<<<<<<< HEAD
 <h1 align='center'> THÊM HỌC SINH</h1>
 <p align='center'>------***------</p>
 

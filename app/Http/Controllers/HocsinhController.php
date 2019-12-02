@@ -18,7 +18,7 @@ class HocsinhController extends Controller
         // return view('HocSinh',['hocsinh'=>$hocsinh] );
         $hocsinh = HocSinh::paginate(4);
         // $Lop = DB::table('lop')->get();
-        return view('HocSinh')->with('HocSinh',$hocsinh);
+        return view('HocSinh')->with('hocsinh',$hocsinh);
     }
     // public function showhs($MaHS) {
     //     $hocsinh = DB::select('select * from hocsinh where MaHS = ?',[$MaHS]);
