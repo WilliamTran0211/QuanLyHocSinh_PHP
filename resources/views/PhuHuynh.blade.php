@@ -1,54 +1,65 @@
 @extends('master.master')
 @section('content')
-    <h1 align='center'> Quản lý Phụ Huynh</h1>
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  
-</head>
-<body>
-    <div class="">
-    <a class="btn btn-primary btn-small" href=">">Thêm</a>
-    <table class="table table-bordered">
-         <tr class="success">
-         <thead class="thead-dark">
-             <th>MaPH</th>
-             <th>Họ và Cha</th>
-             <th>Họ và Mẹ</th>
-             <th>Sdt cha</th>
-             <th>Sdt me</th>
-             <th>Địa chỉ</th>
-             <th>MaHS</th>
-             <th></th>
-             <th></th>
-         
-             </tr>
-             </thead>
-             <tbody>
-            <?php
-            foreach ($Phuhuynh as $ph) {
-                ?>
-                <tr>
-                    <td><?php echo ($ph->MaPH) ?></td>
-                    <td><?php echo ($ph->HoTenCha) ?></td>
-                    <td><?php echo ($ph->HoTenMe) ?></td>
-                    <td><?php echo ($ph->SDTCha) ?></td>
-                    <td><?php echo ($ph->SDTMe) ?></td>
-                    <td><?php echo ($ph->DiaChi) ?></td>
-                    <td><?php echo ($ph->MaHS) ?></td>
-                    <td>
-                        <a class="btn btn-primary edit" href="">Sửa</a>
-                        <a class="btn btn-primary delete" href="{{ route('DeleteLop',['MaLop' => 1])}}">Xóa</a>
-                    </td>
-                </tr>
-            <?php
-            }
-            ?>
-        </tbody>
-     </table>
-</body>
-</html>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+        <a type="button" class="btn btn-primary mt-3 mb-3 add-class" href="{{ route('ThemPH')}}">Thêm</a>
+
+            <main class="mt-2">
+            
+                <div class="content-class">
+                    <table class="table table-bordered text-center ">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Mã phụ huynh</th>
+                                <th>Họ tên cha</th>
+                                <th>Họ tên mẹ</th>
+                                <th>Số điện thoại cha</th>
+                                <th>Số điện thoại mẹ</th>
+                                <th>Địa chỉ</th>
+                                <th>Mã học sinh</th>
+                                <th>Sửa</th>
+                                <th>Xóa</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            foreach ($PhuHuynh as $phuhuynh) {
+                                ?>
+                                <tr class="table-light">
+                                    <td>{{$phuhuynh["MaPH"]}}</td>
+                                    <td>{{$phuhuynh["HoTenCha"]}}</td>
+                                    <td>{{$phuhuynh["HoTenMe"]}}</td>
+                                    <td>{{$phuhuynh["SDTCha"]}}</td>
+                                    <td>{{$phuhuynh["SDTMe"]}}</td>
+                                    <td>{{$phuhuynh["DiaChi"]}}</td>
+                                    <td>{{$phuhuynh["MaHS"]}}</td>
+                                    <td>
+                                    <a class="btn btn-primary update" href="{{route('SuaPH',$phuhuynh['MaPH'])}}">Sửa</a>
+                                    </td>
+                                    <td>
+                                    <a class="btn btn-primary delete" href="/PhuHuynh/<?php echo ($phuhuynh["MaHS"]) ?>">Xóa</a>
+                                    </td>
+                                </tr>
+                            <?php
+                            }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#edit').on("click", function() {
+            let MaPH = $(this).data('id');
+            alert(MaPH);
+            $("#partial-view-edit").load("/PhuHuynh/SuaPH", {
+                MaPH: MaPH
+            });
+        })
+    })
 @endsection

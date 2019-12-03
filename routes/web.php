@@ -61,9 +61,12 @@ Route::post("/LuuSuaGiaoVien",'GiaoVienController@LuuSuaGiaoVien')->name("LuuSua
 Route::get('/GiaoVien/SuaGiaoVien/{MaGV}','GiaoVienController@SuaGiaoVien')->name('SuaGiaoVien');
 Route::get('/GiaoVien/{MaGV}','GiaoVienController@XoaGiaoVien')->name('DeleteGiaoVien');
 
-Route::get('/PhuHuynh', function (){
-    return view('PhuHuynh');
-})->name('PhuHuynh');
+Route::get('/PhuHuynh','PhuHuynhController@LoadDanhSachPhuHuynh')->name("PhuHuynh");
+Route::get("/PhuHuynh/ThemPH", 'PhuHuynhController@ThemPH')->name("ThemPH");
+Route::post("/LuuPH",'PhuHuynhController@LuuPH')->name("LuuPH");
+Route::post("/LuuSuaPH",'PhuHuynhController@LuuSuaPH')->name("LuuSuaPH");
+Route::get("/PhuHuynh/SuaPH/{MaPH}", 'PhuHuynhController@SuaPH')->name("SuaPH");
+Route::get("/PhuHuynh/{MaPH}",'PhuHuynhController@XoaPH')->name("DeletePH");
 
 
 
