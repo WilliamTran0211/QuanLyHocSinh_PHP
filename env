@@ -7,11 +7,11 @@ APP_URL=http://localhost
 LOG_CHANNEL=stack
 
 DB_CONNECTION=mysql
-DB_HOST=remotemysql.com
+DB_HOST=database-quanlyhocsinh.cyhoz4ogkihr.us-east-1.rds.amazonaws.com
 DB_PORT=3306
-DB_DATABASE=vGtpXaRpiC
-DB_USERNAME=vGtpXaRpiC
-DB_PASSWORD=gbuYrXNTbl
+DB_DATABASE=qlhs
+DB_USERNAME=admin
+DB_PASSWORD=qlhsadmin
 
 BROADCAST_DRIVER=log
 CACHE_DRIVER=file
