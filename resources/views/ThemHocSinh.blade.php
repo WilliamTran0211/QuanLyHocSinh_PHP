@@ -10,21 +10,21 @@
   <tbody >
     <tr>
       <td align="right">Họ và Tên: </td>
-      <td><input type="text" name="HoTen" id=""></td>
+      <td><input type="text" name="HoTen" id="" required></td>
     </tr>
     <tr>
     <td align="right"><label for="">Ngày Sinh: </label></td>
-    <td><input type="date" name="NgaySinh" id=""></td>
+    <td><input type="date" name="NgaySinh" id="" required></td>
 </tr>
 <tr>
     <td align="right"><label for="">Giới Tính: </label></td>
-    <td><input type="radio" name="GioiTinh" id="" value="0" checked>Nam
+    <td><input type="radio" name="GioiTinh" id="" value="0" checked required> Nam
        <input type="radio" name="GioiTinh" id="" value="1">Nữ
     </td>
 </tr>
 <tr>
     <td align="right"><label for="">Địa Chỉ: </label></td>
-    <td><input type="text" name="DiaChi" id=""></td>
+    <td><input type="text" name="DiaChi" id="" required></td>
 </tr>
 <tr>
     <td align="right"><label for="">Mã Lớp: </label></td>

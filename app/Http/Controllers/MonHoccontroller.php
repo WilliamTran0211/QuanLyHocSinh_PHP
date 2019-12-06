@@ -59,4 +59,16 @@ class MonHocController extends Controller
         $smh = MonHoc::where('MaMH', $id)->first();
         return view('SuaMonHoc', compact('smh'));
     }
+
+    public function findMonHoc($fmh){
+        $fmh = MonHoc::where('TenMH', 'like', '%'.$fmh.'%')->get();
+
+        return view('KetQuaTimMonHoc', compact('fmh'));
+    }
+
+    public function XuLyfindMonHoc(Request $req){
+        return redirect()->route('KetQuaTimMonHoc', $req->search);
+    }
+
+
 }
