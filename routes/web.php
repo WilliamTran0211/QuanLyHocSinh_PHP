@@ -87,7 +87,11 @@ Route::get('XoaMonHoc/{id}', 'MonHocController@getXoaMonHoc')->name('XoaMonHoc')
 Route::get('SuaMonHoc/{id}' ,'MonHocController@getSuaMonHoc')->name('SuaMonHoc');
 Route::post('SuaMonHoc/{id}' ,'MonHocController@postSuaMonHoc')->name('SuaMonHoc1');
 
-
-
 Route::get('PhuHuynh' ,'PhuhuynhController@LoadDanhSachphuhuynh')->name("Phuhuynh");
 
+
+
+
+
+Route::get('KetQuaTimMonHoc/{fmh}' ,'MonHocController@findMonHoc')->name('KetQuaTimMonHoc');
+Route::post('KetQuaTimMonHoc', 'MonHocController@XuLyfindMonHoc')->name('XuLyKetQuaMonHoc');
