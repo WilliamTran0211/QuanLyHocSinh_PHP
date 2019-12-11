@@ -18,6 +18,8 @@
     <link href="{{ URL::asset('my_vendor/select2/select2.min.css')}}" rel="stylesheet" media="all">
     <link href="{{ URL::asset('my_vendor/perfect-scrollbar/perfect-scrollbar.css')}}" rel="stylesheet" media="all">
 
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+
     <!-- Main CSS-->
     <link href="{{ URL::asset('css/theme.css')}}" rel="stylesheet" media="all">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

@@ -36,6 +36,9 @@
         </tbody>
       </table>
     </div>
+    <script type="text/javascript">
+    $("#monhoc_mnu").addClass("active");
+</script>
     @if(Session::has('xoa'))
     <script>
       alert("{{Session::get('xoa')}}");

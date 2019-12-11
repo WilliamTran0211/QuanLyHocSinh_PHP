@@ -8,7 +8,7 @@
                 <div class="content-class">
                     <table class="table table-bordered text-center ">
                         <thead class="thead-dark">
-                            <tr >
+                            <tr>
                                 <th>Mã lớp</th>
                                 <th>Tên lớp</th>
                                 <th>Giáo viên chủ nhiệm</th>
@@ -16,8 +16,8 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($Lop as $lop){ 
-                                    $GiaoVien = \App\GiaoVien::find($lop['MaGV']);
+                            <?php foreach ($Lop as $lop) {
+                                $GiaoVien = \App\GiaoVien::find($lop['MaGV']);
                                 ?>
                                 <tr class="table-light">
                                     <td>{{$lop["MaLop"]}}</td>
@@ -39,4 +39,12 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $("#lop_mnu").addClass("active");
+</script>
+@if(Session::has('message'))
+<script>
+    alert("{{Session::get('message')}}");
+</script>
+@endif
 @endsection
