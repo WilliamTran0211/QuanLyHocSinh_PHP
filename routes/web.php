@@ -33,6 +33,9 @@ Route::post("/LuuLop",'LopController@LuuLop')->name("LuuLop");
 Route::post("/LuuSuaLop",'LopController@LuuSuaLop')->name("LuuSuaLop");
 Route::get("/Lop/SuaLop/{MaLop}",'LopController@SuaLop')->name("SuaLop");
 Route::get("/Lop/{MaLop}",'LopController@XoaLop')->name("DeleteLop");
+Route::post("TimKiemLop",'LopController@TimKiemLop')->name("TimKiemLop");
+Route::post("TimKiemTheoGiaoVien",'LopController@TimKiemTheoGiaoVien')->name("TimKiemTheoGiaoVien");
+
  
 //Route HocSinh
 Route::get('/HocSinh' ,'HocsinhController@HocSinh')->middleware('checklogin')->name("HocSinh");

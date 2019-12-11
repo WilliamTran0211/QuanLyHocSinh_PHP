@@ -5,6 +5,20 @@
         <div class="col-lg-12">
             <main class="mt-2">
                 <a type="button" class="btn btn-primary mt-3 mb-3 add-class" href="{{ route('ThemLop')}}">Thêm</a>
+                <div class="form-group">
+                    <input id="timkiem" type="text" class="form-input" placeholder="Nhập tên lớp để tìm kiếm" name="timkiem" />
+                    <button id="btnTimKiem" type="button" class="btn btn-primary btn-small">Tìm kiếm</button>
+                    
+                    <?php $GiaoVien = \App\GiaoVien::all()->toArray();?>
+                    <select id="teachers" class="form-select">
+                        <option selected value="">--- Giáo viên chủ nhiệm--- </option>
+                        <?php foreach ($GiaoVien as $giaovien) { ?>
+                            <option value="{{$giaovien['MaGV']}}">{{$giaovien['TenGV']}}</option>
+                        <?php } ?>
+                    </select>
+
+                    <button id="btnReset" type="button" class="btn btn-primary btn-small">Làm mới</button>
+                </div>
                 <div class="content-class">
                     <table class="table table-bordered text-center ">
                         <thead class="thead-dark">
@@ -40,7 +54,66 @@
     </div>
 </div>
 <script type="text/javascript">
-    $("#lop_mnu").addClass("active");
+    $(document).ready(function(){
+        $("#lop_mnu").addClass("active");
+
+        $(".pagination").removeClass("hidden-pagination");
+
+        $("#btnTimKiem").on('click', function(e) {
+            e.preventDefault();
+      
+            $(".pagination").addClass("hidden-pagination");
+            $(".body-table").find("tr").remove();
+
+            let giaTriTimKiem = $("#timkiem").val();
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $.ajax({
+                url: "{{URL::to('TimKiemLop')}}",
+                type: "POST",
+                data: {
+                    TenLop: giaTriTimKiem
+                },
+                success: function(data) {
+                    console.log(data);
+                    $('tbody').html(data);
+                }
+            })
+        });        
+
+        $('#teachers').on('change',function(e){
+            e.preventDefault();
+
+            $(".pagination").addClass("hidden-pagination");
+            $(".body-table").find("tr").remove();
+
+            let giaTriTimKiemTheoMonHoc = $("#teachers").val();
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                url: "{{URL::to('TimKiemTheoGiaoVien')}}",
+                type: "POST",
+                data: {
+                    MaGV: giaTriTimKiemTheoMonHoc
+                },
+                success: function(data) {
+                    console.log(data);
+                    $('tbody').html(data);
+                }
+            })
+        })
+
+        $("#btnReset").click(function() {
+            location.reload();
+        })
+    })
 </script>
 @if(Session::has('message'))
 <script>
