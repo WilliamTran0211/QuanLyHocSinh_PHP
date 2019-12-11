@@ -44,7 +44,7 @@ class LopController extends Controller
     public function XoaLop($MaLop){
         $kiemTraLopTonTai = DB::table('hocsinh')->where("MaLop",'=',$MaLop)->get();
         if(count($kiemTraLopTonTai) > 0){
-             
+            return redirect()->route('Lop')->with(["message"=>"Hiện tại lớp đang có sinh viên học không thể xóa"]);
         }else{
             DB::delete('delete from lop where MaLop = ?', [$MaLop]);
             return redirect()->route('Lop');

@@ -8,9 +8,11 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <style>
-    html, body{
-      height:100%;
+    html,
+    body {
+      height: 100%;
     }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
     }
@@ -86,31 +88,39 @@
   <div class="container h-100">
     <div class="row h-100 d-flex justify-content-center align-items-center">
       <div class="col-xs-12 col-sm-8 col-lg-4 col-md-4">
-        <form action="/action_page.php" method="post">
+        <form action="{{route('formdangnhap')}}" method="post">
+          @csrf
           <div class="imgcontainer">
             <img src="{{URL::asset('user_account.png')}}" alt="image" />
           </div>
 
           <div class="container">
-            <label for="uname"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required>
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Nhập email" name="email" required>
 
-            <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
-
-            <button type="submit" style="background-color: blue;">Login</button>
-            <label>
+            <label for="password"><b>Mật khẩu</b></label>
+            <input type="password" placeholder="Nhập mật khẩu" name="password" required>
+            <button type="submit" style="background-color: blue;">Đăng nhập</button>
+            <!-- <label>
               <input type="checkbox" checked="checked" name="remember"> Remember me
-            </label>
+            </label> -->
+            @if($messageError)
+            <p class="text-danger error">{{$messageError}}</p>
+            @endif
           </div>
           <div class="container" style="background-color:#f1f1f1">
-            <button type="button" class="cancelbtn">Cancel</button>
-            <span class="psw">Forgot <a href="#">password?</a></span>
+            <!-- <button type="button" class="cancelbtn">Cancel</button> -->
+            <span class="psw">Quên <a href="#">mật khẩu?</a></span>
           </div>
         </form>
       </div>
     </div>
   </div>
+  @if(Session::has('message'))
+  <script>
+    alert("{{Session::get('message')}}");
+  </script>
+  @endif
 </body>
 
 </html>

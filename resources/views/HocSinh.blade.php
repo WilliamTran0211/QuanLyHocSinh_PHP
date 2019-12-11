@@ -56,6 +56,9 @@
       </tr>
       </table>
     </div>
+    <script type="text/javascript">
+    $("#hocsinh_mnu").addClass("active");
+</script>
 </body>
 
 </html>

@@ -43,6 +43,7 @@
 </div>
 <script type="text/javascript">
     $(document).ready(function() {
+        $("#hocki_mnu").addClass("active");
         $('#edit').on("click", function() {
             let MaLop = $(this).data('id');
             alert(MaLop);

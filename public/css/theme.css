@@ -316,7 +316,7 @@ section {
 }
 
 .main-content {
-    padding-top: 116px;
+    padding-top: 80px;
     min-height: 100vh;
 }
 
@@ -1646,6 +1646,7 @@ section {
 
 .navbar-sidebar .navbar__list li.active > a {
     color: #4272d7;
+    font-weight:500;
 }
 
 .has-sub {

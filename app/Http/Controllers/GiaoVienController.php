@@ -61,4 +61,79 @@ class GiaoVienController extends Controller
         DB::delete('delete from giaovien where MaGV = ?', [$MaGV]);
         return redirect()->route('GiaoVien');
     }
+
+    public function TimKiem(Request $request)
+    {
+        $data = "";
+        $GioiTinh ="";
+        $GiaoVien = DB::table('giaovien')->where('TenGV', $request->TenGV)->get();
+        if ($GiaoVien && count($GiaoVien) > 0) {
+            foreach ($GiaoVien as $giaovien) {
+                $MonHoc = MonHoc::find($giaovien->MaMH);
+                if($giaovien->GioiTinh == 0){
+                    $GioiTinh = "Nam";
+                }else{
+                    $GioiTinh = "Nữ";
+                }
+                $data .= '<tr class="table-light">
+                <td>' . $giaovien->MaGV . '</td>
+                <td>' . $giaovien->TenGV . '</td>
+                <td>' . $giaovien->NgaySinh . '</td>
+                <td>'  . $GioiTinh . '</td>
+                <td>' . $giaovien->DiaChi . '</td>
+                <td>' . $giaovien->Email . '</td>
+                <td>' . $giaovien->SDT . '</td>
+                <td>' . $MonHoc->TenMH . '</td>
+                <td>
+                    <a class="btn btn-primary update" href="/GiaoVien/SuaGiaoVien/' . $giaovien->MaGV . '">Sửa</a>
+                    <a class="btn btn-primary delete" href="/GiaoVien/'.$giaovien->MaGV.'">Xóa</a>
+                </td>
+                </tr>';
+            }
+            return Response($data);
+        }else{
+            $data = "";
+            $data .= '<tr class="table-light">
+                <td colspan="9"> Không tìm thấy giáo viên</td>
+            </tr>';
+            return Response($data);
+        }
+    }
+
+    public function TimKiemTheoMonHoc(Request $request){
+        $data = "";
+        $GioiTinh ="";
+        $GiaoVien = DB::table('giaovien')->where('MaMH', $request->MaMH)->get();
+        if ($GiaoVien && count($GiaoVien) > 0) {
+            foreach ($GiaoVien as $giaovien) {
+                $MonHoc = MonHoc::find($giaovien->MaMH);
+                if($giaovien->GioiTinh == 0){
+                    $GioiTinh = "Nam";
+                }else{
+                    $GioiTinh = "Nữ";
+                }
+                $data .= '<tr class="table-light">
+                <td>' . $giaovien->MaGV . '</td>
+                <td>' . $giaovien->TenGV . '</td>
+                <td>' . $giaovien->NgaySinh . '</td>
+                <td>'  . $GioiTinh . '</td>
+                <td>' . $giaovien->DiaChi . '</td>
+                <td>' . $giaovien->Email . '</td>
+                <td>' . $giaovien->SDT . '</td>
+                <td>' . $MonHoc->TenMH . '</td>
+                <td>
+                    <a class="btn btn-primary update" href="/GiaoVien/SuaGiaoVien/' . $giaovien->MaGV . '">Sửa</a>
+                    <a class="btn btn-primary delete" href="/GiaoVien/'.$giaovien->MaGV.'">Xóa</a>
+                </td>
+                </tr>';
+            }
+            return Response($data);
+        }else{
+            $data = "";
+            $data .= '<tr class="table-light">
+                <td colspan="9"> Không tìm thấy giáo viên</td>
+            </tr>';
+            return Response($data);
+        }
+    }
 }
