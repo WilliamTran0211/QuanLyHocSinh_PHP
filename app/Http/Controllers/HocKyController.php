@@ -49,5 +49,64 @@ class HocKyController extends Controller
         }
         
     }
+    public function TimKiemhk(Request $request)
+    {
+        $data = "";
+     
+        $HocKy = DB::table('hocky')->where('LoaiHK', $request->LoaiHK)->get();
+        if ($HocKy && count($HocKy) > 0) {
+            foreach ($HocKy as $hs) {
+            
+                $data .= '<tr class="table-light">
+                <td>' . $hs->MaHK . '</td>
+                <td>' . $hs->LoaiHK . '</td>
+                <td>' . $hs->NamBatDau . '</td>
+                <td>' . $hs->NamKetThuc . '</td>
+             
+                <td>
+                    <a class="btn btn-primary update" href="/HocKy/SuaHocKy/' . $hs->MaHK . '">Sửa</a>
+                    <a class="btn btn-primary delete" href="/HocKy/'.$hs->MaHK.'">Xóa</a>
+                </td>
+                </tr>';
+            }
+            return Response($data);
+        }else{
+            $data = "";
+            $data .= '<tr class="table-light">
+            <td colspan="9"> Không tìm thấy Học Kỳ</td>
+            </tr>';
+            return Response($data);
+        }
+    }
+    public function TimKiemnambatdau(Request $request)
+    {
+        $data = "";
+     
+        $HocKy = DB::table('hocky')->where('NamBatDau', $request->NamBatDau)->get();
+        if ($HocKy && count($HocKy) > 0) {
+            foreach ($HocKy as $hs) {
+            
+                $data .= '<tr class="table-light">
+                <td>' . $hs->MaHK . '</td>
+                <td>' . $hs->LoaiHK . '</td>
+                <td>' . $hs->NamBatDau . '</td>
+                <td>' . $hs->NamKetThuc . '</td>
+             
+                <td>
+                    <a class="btn btn-primary update" href="/HocKy/SuaHocKy/' . $hs->MaHK . '">Sửa</a>
+                    <a class="btn btn-primary delete" href="/HocKy/'.$hs->MaHK.'">Xóa</a>
+                </td>
+                </tr>';
+            }
+            return Response($data);
+        }else{
+            $data = "";
+            $data .= '<tr class="table-light">
+            <td colspan="9"> Không tìm thấy Học Kỳ</td>
+            </tr>';
+            return Response($data);
+        }
+    }
+  
 
 }

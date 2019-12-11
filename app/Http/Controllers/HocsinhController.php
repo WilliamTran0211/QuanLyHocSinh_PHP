@@ -20,6 +20,7 @@ class HocsinhController extends Controller
         // $Lop = DB::table('lop')->get();
         return view('HocSinh')->with('hocsinh',$hocsinh);
     }
+
     // public function showhs($MaHS) {
     //     $hocsinh = DB::select('select * from hocsinh where MaHS = ?',[$MaHS]);
     //     return view('UpdateHocSinh',['hocsinh'=>$hocsinh]);
@@ -127,10 +128,65 @@ class HocsinhController extends Controller
     return redirect()->route('ThemHocSinh');
 
    }
+   public function TimKiemhs(Request $request)
+   {
+       $data = "";
+    
+       $HocSinh = DB::table('hocsinh')->where('HoTen', $request->HoTen)->get();
+       if ($HocSinh && count($HocSinh) > 0) {
+           foreach ($HocSinh as $hs) {
+               $lop = Lop::find($hs->MaLop);
+               $data .= '<tr class="table-light">
+               <td>' . $hs->MaHS . '</td>
+               <td>' . $hs->HoTen . '</td>
+               <td>' . $hs->NamSinh . '</td>
+               <td>' . $hs->GioiTinh . '</td>
+               <td>' . $hs->DiaChi . '</td>
+               <td>' . $lop->TenLop . '</td>
+               <td>
+                   <a class="btn btn-primary update" href="/HocSinh/SuaHocSinh/' . $hs->MaHS . '">Sửa</a>
+                   <a class="btn btn-primary delete" href="/HocSinh/'.$hs->MaHS.'">Xóa</a>
+               </td>
+               </tr>';
+           }
+           return Response($data);
+       }else{
+           $data = "";
+           $data .= '<tr class="table-light">
+           <td colspan="9"> Không tìm thấy Học sinh</td>
+           </tr>';
+           return Response($data);
+       }
+   }
 
-
-
-
-
-
+   public function TimKiemTheoLop(Request $request){
+       $data = "";
+     
+       $HocSinh = DB::table('hocsinh')->where('MaLop', $request->MaLop)->get();
+       if ($HocSinh && count($HocSinh) > 0) {
+           foreach ($HocSinh as $hs) {
+               $Lop = Lop::find($hs->MaLop);
+          
+               $data .= '<tr class="table-light">
+               <td>' . $hs->MaHS . '</td>
+               <td>' . $hs->HoTen . '</td>
+               <td>' . $hs->NamSinh . '</td>
+               <td>' . $hs->GioiTinh . '</td>
+               <td>' . $hs->DiaChi . '</td>
+               <td>' . $Lop->TenLop . '</td>
+               <td>
+                   <a class="btn btn-primary update" href="/HocSinh/SuaHocSinh/' . $hs->MaHS . '">Sửa</a>
+                   <a class="btn btn-primary delete" href="/HocSinh/'.$hs->MaHS.'">Xóa</a>
+               </td>
+               </tr>';
+           }
+           return Response($data);
+       }else{
+           $data = "";
+           $data .= '<tr class="table-light">
+               <td colspan="9"> Không tìm thấy Học sinh</td>
+           </tr>';
+           return Response($data);
+       }
+   }
 }

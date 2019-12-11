@@ -5,6 +5,19 @@
         <div class="col-lg-12">
             <main class="mt-2">
                 <a type="button" class="btn btn-primary mt-3 mb-3 add-class" href="{{ route('ThemHocKy')}}">Thêm</a>
+                <div class="form-group">
+                    <input id="timkiem" type="text" class="form-input" placeholder="Nhập tên loại học kỳ để tìm kiếm" name="timkiem" />
+                    <button id="btnTimKiem" type="button" class="btn btn-primary btn-small">Tìm kiếm</button>
+
+                    <?php $hocky = \App\HocKy::all()->toArray(); ?>
+                    <select id="subject" class="form-select">
+                        <option selected value="">--- Học kỳ --- </option>
+                        <?php foreach ($HocKy as $hocky) { ?>
+                            <option value="{{$hocky['NamBatDau']}}">{{$hocky['NamBatDau']}}</option>
+                        <?php } ?>
+                    </select>
+                    <button id="btnReset" type="button" class="btn btn-primary btn-small">Làm mới</button>
+                </div>
                 <div class="content-class">
                     <table class="table table-bordered text-center ">
                         <thead class="thead-dark">
@@ -51,6 +64,66 @@
                 MaLop: MaLop
             });
         })
-    })
+
+
+
+        $("#hocki_mnu").addClass("active");
+        $(".pagination").removeClass("hidden-pagination");
+
+        $("#btnTimKiem").on('click', function(e) {
+            e.preventDefault();
+
+            $(".pagination").addClass("hidden-pagination");
+            $(".body-table").find("tr").remove();
+
+            let giaTriTim = $("#timkiem").val();
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                url: "{{URL::to('TimKiemhk')}}",
+                type: "POST",
+                data: {
+                    LoaiHK: giaTriTim
+                },
+                success: function(data) {
+                    console.log(data);
+                    $('tbody').html(data);
+                }
+            })
+        });
+
+        $('#subject').on('change', function(e) {
+            e.preventDefault();
+
+            $(".pagination").addClass("hidden-pagination");
+            $(".body-table").find("tr").remove();
+
+            let giaTriTimKiemTheohk = $("#subject").val();
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                url: "{{URL::to('TimKiemnambatdau')}}",
+                type: "POST",
+                data: {
+                    NamBatDau: giaTriTimKiemTheohk
+                },
+                success: function(data) {
+                    console.log(data);
+                    $('tbody').html(data);
+                }
+            })
+        })
+
+
+        $("#btnReset").click(function() {
+            location.reload();
+        })
+    });
 </script>
 @endsection

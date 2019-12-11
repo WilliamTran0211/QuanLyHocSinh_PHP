@@ -41,6 +41,8 @@ Route::post("/LuuHocSinh",'HocsinhController@LuuHocSinh')->name("LuuHocSinh");
 Route::post("/LuuSuaHocSinh",'HocsinhController@LuuSuaHocSinh')->name("LuuSuaHocSinh");
 Route::get("/HocSinh/SuaHocSinh/{MaHS}",'HocsinhController@SuaHocSinh')->name("SuaHocSinh");
 Route::get("/HocSinh/{MaHS}",'HocsinhController@XoaHocSinh')->name("DeleteHocSinh");
+Route::post('/TimKiemhs','HocsinhController@TimKiemhs')->name('TimKiemhs');
+Route::post('/TimKiemTheoLop','HocsinhController@TimKiemTheoLop')->name('TimKiemTheoLop');
 
 
 
@@ -51,6 +53,8 @@ Route::post("/LuuHocKy",'HocKyController@LuuHocKy')->name("LuuHocKy");
 Route::post("/LuuSuaHocKy",'HocKyController@LuuSuaHocKy')->name("LuuSuaHocKy");
 Route::get("/HocKy/SuaHocKy/{MaHK}",'HocKyController@SuaHocKy')->name("SuaHocKy");
 Route::get("/HocKy/{MaHK}",'HocKyController@XoaHocKy')->name("DeleteHocKy");
+Route::post('/TimKiemhk','HocKyController@TimKiemhk')->name('TimKiemhk');
+Route::post('/TimKiemnambatdau','HocKyController@TimKiemnambatdau')->name('TimKiemnambatdau');
 
 
 Route::get('/GiaoVien','GiaoVienController@GiaoVien')->middleware('checklogin')->name('GiaoVien');
