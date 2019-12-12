@@ -78,9 +78,10 @@ class HocsinhController extends Controller
 
     public function SuaHocSinh($MaHS){
         $hocsinh = DB::select('select * from hocsinh where MaHS = ?',[$MaHS]);
-        return view('SuaHocSinh',['hocsinh'=>$hocsinh]);
+        $Lop = Lop::all()->toArray();
+        return view('SuaHocSinh',['hocsinh'=>$hocsinh, "Lop"=> $Lop]);
     }
-
+ 
     public function LuuSuaHocSinh(Request $request){
         $hocsinh = HocSinh::find($request->mahs);
         $hocsinh->HoTen = $request->hoten;

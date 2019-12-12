@@ -1,4 +1,4 @@
-    <!-- Fontfaces CSS-->
+        <!-- Fontfaces CSS-->
     <link href="{{ URL::asset('css/font-face.css')}}" rel="stylesheet" media="all">
     <link href="{{ URL::asset('css/style.css')}}" rel="stylesheet" media="all">
     <link href="{{ URL::asset('my_vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet" media="all">
