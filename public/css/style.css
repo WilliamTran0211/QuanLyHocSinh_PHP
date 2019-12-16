@@ -18,3 +18,9 @@
    display: none;
    visibility: hidden;
 }
+td {
+  background-color: white;
+}
+.icon{
+  margin-left: 15px;
+}

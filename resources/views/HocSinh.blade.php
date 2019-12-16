@@ -63,10 +63,11 @@
       </tr>
         </tbody>
       </table>
-      <div class="pagination">
+   
+    </div>
+    <div class="pagination">
         {{ $hocsinh->links() }}
       </div>
-    </div>
   </div>
 
   <script type="text/javascript">
