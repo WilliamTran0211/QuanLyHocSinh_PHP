@@ -36,7 +36,7 @@ class MonHocController extends Controller
     public function postThemMonHoc(Request $tmh1)
     {
         $tmh = new MonHoc();
-        $tmh->TenMH = $tmh1->TenMH;
+         $tmh->TenMH = $tmh1->TenMH;
         $tmh->save();
         return redirect()->route('MonHoc')->with(['xoa' => 'Đã Thêm Môn Học Thành Công']);
     }

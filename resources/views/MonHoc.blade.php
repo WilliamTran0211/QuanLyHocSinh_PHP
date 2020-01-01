@@ -13,6 +13,17 @@
 <body>
   <div class="container">
     <a class="btn btn-primary btn-small mb-3" href="{{route('ThemMonHoc')}}">Thêm</a>
+
+
+
+  <form class="form-header" action="{{route('XuLyKetQuaMonHoc')}}" method="POST">
+    @csrf
+    <input class="au-input au-input--xl" type="text" name="search" placeholder=" Nhập tên môn học cần tìm" />
+    <button class="au-btn--submit" type="submit">
+        <i class="zmdi zmdi-search"></i>
+    </button>
+</form>
+
     <div class="table-responsive text-nowrap">
       <table class="table table-bordered text-center">
         <tr class="success">
