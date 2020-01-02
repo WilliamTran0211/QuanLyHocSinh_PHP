@@ -21,10 +21,10 @@ Route::get('/TrangChu', function (){
 })->middleware('checklogin')->name('TrangChu');
 
 
+//Route DiemController
+Route::get('/Diem','DiemController@LoadDanhSachDiem')->middleware('checklogin')->name("DiemController");
+Route::get("/Diem/NhapDiem", 'DiemController@NhapDiem')->name("NhapDiem");
 
-Route::get('/Diem', function (){
-    return view('Diem');
-})->name('Diem');
 
 //Route Lop
 Route::get('/Lop','LopController@LoadDanhSachLop')->middleware('checklogin')->name("Lop");
@@ -36,7 +36,7 @@ Route::get("/Lop/{MaLop}",'LopController@XoaLop')->name("DeleteLop");
 Route::post("TimKiemLop",'LopController@TimKiemLop')->name("TimKiemLop");
 Route::post("TimKiemTheoGiaoVien",'LopController@TimKiemTheoGiaoVien')->name("TimKiemTheoGiaoVien");
 
- 
+
 //Route HocSinh
 Route::get('/HocSinh' ,'HocsinhController@HocSinh')->middleware('checklogin')->name("HocSinh");
 Route::get("/HocSinh/ThemHocSinh", 'HocsinhController@ThemHocSinh')->name("ThemHocSinh");
@@ -92,7 +92,7 @@ Route::post("/Users/LuuSuaAdmin", "UserController@LuuSuaAdmin")->name('LuuSuaAdm
 //     Route::get('/Session', function(){
 //         Session::put('KhoaHoc',"aaa");
 //         echo "dadt";
-//     }); 
+//     });
 // });
 
 

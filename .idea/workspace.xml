@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="892765a4-9edf-4c60-8f6c-208d9db36e6b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/DiemController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/NhapDiem.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/SuaDiem.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/QuanLyHocSinh_PHP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/QuanLyHocSinh_PHP.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HocsinhController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HocsinhController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MonHoccontroller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MonHoccontroller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Diem.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Diem.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/master/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/master/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -147,6 +157,7 @@
       <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
       <path value="$PROJECT_DIR$/vendor/nunomaduro/collision" />
       <path value="$PROJECT_DIR$/vendor/twbs/bootstrap" />
+      <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
     </include_path>
   </component>
   <component name="ProjectId" id="1TaZRislktldLg54iZoymCvfXeO" />
@@ -222,6 +233,13 @@
       <workItem from="1573711053787" duration="6258000" />
       <workItem from="1573737952466" duration="12595000" />
       <workItem from="1573778570989" duration="881000" />
+      <workItem from="1576102105157" duration="3225000" />
+      <workItem from="1576277783172" duration="1112000" />
+      <workItem from="1576778767581" duration="609000" />
+      <workItem from="1576812839772" duration="1262000" />
+      <workItem from="1576885021804" duration="419000" />
+      <workItem from="1577613134459" duration="817000" />
+      <workItem from="1577774040816" duration="1663000" />
     </task>
     <servers />
   </component>

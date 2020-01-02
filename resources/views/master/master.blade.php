@@ -53,7 +53,7 @@
                             </ul>
                         </li>
                         <li id="diem_mnu">
-                            <a href="{{route('Diem')}}">
+                            <a href="{{route('DiemController')}}">
                                 <i class="fas fa-calculator"></i>Điểm</a>
                         </li>
                         <li id="lop_mnu">
@@ -70,7 +70,7 @@
                         </li>
                         <li id="monhoc_mnu">
                             <a href="{{route('MonHoc')}}">
-                                <i class="fas fa-chalkboard-teacher"></i>Môn Học</a>
+                                <i class="fas fa-book"></i>Môn Học</a>
                         </li>
                         <li id="user_mnu">
                             <a href="{{route('Users')}}">
@@ -121,7 +121,7 @@
                                             </div>
                                             <!-- <div class="account-dropdown__body">
                                                 <div class="account-dropdown__item">
-                                                    <a href="Diem">
+                                                   DiemControllerhref="Diem">
                                                         <i class="zmdi zmdi-account"></i>Thông tin tài khoản</a>
                                                 </div>
                                             </div> -->
@@ -141,7 +141,7 @@
 
             <!-- MAIN CONTENT-->
             <div class="main-content">
-                <div class="p-30">
+                <div class="section__content section__content--p30">
                     @yield('content')
                 </div>
             </div>
